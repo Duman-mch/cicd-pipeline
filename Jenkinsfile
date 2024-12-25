@@ -3,9 +3,14 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh './scripts/build.sh'
-      }
+        sh '''stage(\'Build\') {
+    steps {
+        sh \'chmod +x scripts/build.sh\'
+        sh \'./scripts/build.sh\'
     }
+}'''
+        }
+      }
 
+    }
   }
-}
