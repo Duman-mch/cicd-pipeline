@@ -10,7 +10,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh './duman/cicd-pipeline/scripts/test.sh'
+        sh './scripts/test.sh'
       }
     }
 
