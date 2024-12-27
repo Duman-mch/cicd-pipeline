@@ -17,9 +17,28 @@ pipeline {
 
     stage('Build Docker Image') {
       steps {
-        sh 'docker build -t my-build-image /home/duman/cicd-pipeline'
-      }
-    }
+        sh '''pipeline {
+    agent any
 
+    stages {
+        stage(\'Build Docker Image\') {
+            steps {
+                script {
+                    docker.build(\'my-build-image\', \'/home/duman/cicd-pipeline\')
+                }
+            }
+        }
+        stage(\'Run Docker Container\') {
+            steps {
+                script {
+                    docker.image(\'my-build-image\').run(\'-d -p 3000:3000\')
+                }
+            }
+        }
+    }
+}'''
+        }
+      }
+
+    }
   }
-}
