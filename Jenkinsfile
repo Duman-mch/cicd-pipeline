@@ -14,12 +14,15 @@ pipeline {
         sh './scripts/test.sh'
       }
     }
+
     stage('Build Docker Image') {
-            steps {
-                script {
-                    docker.build('mybuildimage')
-                }
-            }
+      steps {
+        script {
+          docker.build('mybuildimage')
         }
+
+      }
+    }
+
   }
 }
