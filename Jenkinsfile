@@ -18,7 +18,7 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         sh 'chmod +x scripts/build.sh'
-        sh 'docker build --platform linux/arm64 -t my-build-image .'
+        sh 'docker build -t your-image-name .'
       }
     }
 
