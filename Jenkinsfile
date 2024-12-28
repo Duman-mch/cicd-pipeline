@@ -17,7 +17,7 @@ pipeline {
 
     stage('Build Docker Image') {
       steps {
-        sh 'docker build -t mybuildimage /home/duman/cicd-pipeline'
+        sh 'docker build -t mybuildimage .'
       }
     }
 
