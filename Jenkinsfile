@@ -15,12 +15,5 @@ pipeline {
       }
     }
 
-    stage('Build Docker Image') {
-      steps {
-        sh 'chmod +x scripts/build.sh'
-        sh 'docker build -t your-image-name .'
-      }
-    }
-
   }
 }
