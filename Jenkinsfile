@@ -17,10 +17,7 @@ pipeline {
 
     stage('Build Docker Image') {
       steps {
-        script {
-          docker.build('mybuildimage')
-        }
-
+        sh 'docker build -t duman_image_1 .'
       }
     }
 
