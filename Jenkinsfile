@@ -49,6 +49,6 @@ echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
   }
   environment {
-    DOCKER_IMAGE = 'dumanmch2024/duman_build_image:latest'
+    DOCKER_IMAGE = 'dumanmch2024/duman_image_1:latest'
   }
 }
